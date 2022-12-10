@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: blogbootstrap_development
+  username: rails_dev
+  password: postgres
+  host: localhost
+  port: 5432
+ 
+  
+#test:
+ # <<: *default
+  #database: blogbootstrap_test
+
+#production:
+  #<<: *default
+  #database: blogbootstrap_production
+  #username: blogbootstrap
+  #password: <%= ENV['BLOGBOOTSTRAP_DATABASE_PASSWORD'] %>
